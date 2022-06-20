@@ -13,18 +13,18 @@ const IndexPage = ({ pageContext: { pageData, menuData, blogPosts } }) => {
 
   return (
     <Layout menuItems={menuItems}>
-      <SEO { ...pageData.seo } />
+      <SEO {...pageData.seo} />
 
       {bodyElements.map((bodyElement, i) => {
         switch (bodyElement.type) {
           case "hero":
-            return <HeroSection fields={bodyElement.fields} key={i}/>
+            return <HeroSection fields={bodyElement.fields} key={i} />
           case "two_column_with_image":
-            return <TwoColumnWithImageSection fields={bodyElement.fields} key={i}/>
+            return <TwoColumnWithImageSection fields={bodyElement.fields} key={i} />
           case "features":
-            return <FeaturesSection fields={bodyElement.fields} key={i}/>
+            return <FeaturesSection fields={bodyElement.fields} key={i} />
           case "testimonials":
-            return <TestimonialsSection fields={bodyElement.fields} key={i}/>
+            return <TestimonialsSection fields={bodyElement.fields} key={i} />
           default:
             return null
         }
